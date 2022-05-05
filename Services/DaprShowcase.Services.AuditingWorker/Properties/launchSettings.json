@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DaprShowcase.Services.AuditingWorker": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

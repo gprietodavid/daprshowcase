@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DaprShowcase.Services.AvScanWorker": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
