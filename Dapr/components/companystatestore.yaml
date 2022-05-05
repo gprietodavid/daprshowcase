@@ -1,0 +1,21 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: companystatestore
+spec:
+  type: state.redis
+  metadata:
+  - name: redisHost
+    secretKeyRef:
+      name: "Redis:Host"
+      key:  "Redis:Host"
+  - name: redisPassword
+    secretKeyRef:
+      name: "Redis:Password"
+      key:  "Redis:Password"
+  - name: actorStateStore
+    value: "false"
+  - name: keyPrefix
+    value: appid
+auth:
+  secretStore: daprshowcasesecretstore

@@ -1,0 +1,27 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: auditingpubsub
+  namespace: default
+spec:
+  type: pubsub.azure.eventhubs
+  version: v1
+  metadata:
+  - name: connectionString
+    secretKeyRef:
+      name: "EventHub:ConnectionString"
+      key:  "EventHub:ConnectionString"
+  - name: enableEntityManagement
+    value: "false"
+  - name: storageAccountName
+    secretKeyRef:
+      name: "AuditingStorageAccount:Name"
+      key:  "AuditingStorageAccount:Name"
+  - name: storageAccountKey
+    secretKeyRef:
+      name: "AuditingStorageAccount:Key"
+      key:  "AuditingStorageAccount:Key"
+  - name: storageContainerName
+    value: "auditingworker"
+auth:
+  secretStore: daprshowcasesecretstore

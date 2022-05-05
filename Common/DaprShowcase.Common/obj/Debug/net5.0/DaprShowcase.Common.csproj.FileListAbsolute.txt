@@ -1,0 +1,12 @@
+C:\Users\gprietodavid\source\repos\DaprShowcase\Common\DaprShowcase.Common\bin\Debug\net5.0\DaprShowcase.Common.deps.json
+C:\Users\gprietodavid\source\repos\DaprShowcase\Common\DaprShowcase.Common\bin\Debug\net5.0\DaprShowcase.Common.dll
+C:\Users\gprietodavid\source\repos\DaprShowcase\Common\DaprShowcase.Common\bin\Debug\net5.0\ref\DaprShowcase.Common.dll
+C:\Users\gprietodavid\source\repos\DaprShowcase\Common\DaprShowcase.Common\bin\Debug\net5.0\DaprShowcase.Common.pdb
+C:\Users\gprietodavid\source\repos\DaprShowcase\Common\DaprShowcase.Common\obj\Debug\net5.0\DaprShowcase.Common.csproj.AssemblyReference.cache
+C:\Users\gprietodavid\source\repos\DaprShowcase\Common\DaprShowcase.Common\obj\Debug\net5.0\DaprShowcase.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gprietodavid\source\repos\DaprShowcase\Common\DaprShowcase.Common\obj\Debug\net5.0\DaprShowcase.Common.AssemblyInfoInputs.cache
+C:\Users\gprietodavid\source\repos\DaprShowcase\Common\DaprShowcase.Common\obj\Debug\net5.0\DaprShowcase.Common.AssemblyInfo.cs
+C:\Users\gprietodavid\source\repos\DaprShowcase\Common\DaprShowcase.Common\obj\Debug\net5.0\DaprShowcase.Common.csproj.CoreCompileInputs.cache
+C:\Users\gprietodavid\source\repos\DaprShowcase\Common\DaprShowcase.Common\obj\Debug\net5.0\DaprShowcase.Common.dll
+C:\Users\gprietodavid\source\repos\DaprShowcase\Common\DaprShowcase.Common\obj\Debug\net5.0\ref\DaprShowcase.Common.dll
+C:\Users\gprietodavid\source\repos\DaprShowcase\Common\DaprShowcase.Common\obj\Debug\net5.0\DaprShowcase.Common.pdb

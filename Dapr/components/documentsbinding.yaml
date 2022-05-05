@@ -1,0 +1,22 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: documentsbinding
+spec:
+  type: bindings.azure.blobstorage
+  version: v1
+  metadata:
+  - name: storageAccount
+    secretKeyRef:
+      name: "DocumentStorageAccount:Name"
+      key:  "DocumentStorageAccount:Name"
+  - name: storageAccessKey
+    secretKeyRef:
+      name: "DocumentStorageAccount:Key"
+      key:  "DocumentStorageAccount:Key"
+  - name: container
+    value: daprshowcase
+  - name: decodeBase64
+    value: true
+auth:
+  secretStore: daprshowcasesecretstore

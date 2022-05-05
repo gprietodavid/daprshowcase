@@ -1,0 +1,92 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Source\\Repos\\DaprShowcase\\Common\\DaprShowcase.Common\\DaprShowcase.Common.csproj": {}
+  },
+  "projects": {
+    "C:\\Source\\Repos\\DaprShowcase\\Common\\DaprShowcase.Common\\DaprShowcase.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Source\\Repos\\DaprShowcase\\Common\\DaprShowcase.Common\\DaprShowcase.Common.csproj",
+        "projectName": "DaprShowcase.Common",
+        "projectPath": "C:\\Source\\Repos\\DaprShowcase\\Common\\DaprShowcase.Common\\DaprShowcase.Common.csproj",
+        "packagesPath": "C:\\Users\\gprietodavid\\.nuget\\packages\\",
+        "outputPath": "C:\\Source\\Repos\\DaprShowcase\\Common\\DaprShowcase.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\gprietodavid\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://deloittebsg.pkgs.visualstudio.com/762be0bb-1855-4c5f-a2a6-bc1f00e31469/_packaging/SubmissionPlatform2.0/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/deloitte-daf-cloud/dbe8148a-b386-4a59-8ffc-f53247118187/_packaging/Deloitte.TaxLegal.Cloud/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Dapr.Client": {
+              "target": "Package",
+              "version": "[1.7.0, )"
+            },
+            "Microsoft.ApplicationInsights": {
+              "target": "Package",
+              "version": "[2.20.0, )"
+            },
+            "Microsoft.ApplicationInsights.WorkerService": {
+              "target": "Package",
+              "version": "[2.20.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Polly": {
+              "target": "Package",
+              "version": "[7.2.3, )"
+            },
+            "Polly.Contrib.WaitAndRetry": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: companystatestore
+spec:
+  type: state.azure.tablestorage
+  version: v1
+  metadata:
+  - name: accountName
+    secretKeyRef:
+      name: "CompanyStorageAccount:Name"
+      key:  "CompanyStorageAccount:Name"
+  - name: accountKey
+    secretKeyRef:
+      name: "CompanyStorageAccount:Key"
+      key:  "CompanyStorageAccount:Key"
+  - name: tableName
+    value: "CompanyStateStore"
+auth:
+  secretStore: daprshowcasesecretstore
