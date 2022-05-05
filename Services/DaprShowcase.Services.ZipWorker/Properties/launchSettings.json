@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DaprShowcase.Services.ZipWorker": {
+      "commandName": "Project"
+    },
+    "Docker (1)": {
+      "commandName": "Docker"
+    }
+  }
+}

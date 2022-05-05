@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "DaprShowcase.Services.Orchestrator": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "httpPort": 30956,
+      "useSSL": false
+    }
+  }
+}
