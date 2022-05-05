@@ -1,0 +1,138 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{FDDF5675-4A55-432B-91EC-BB2A0E68E400}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{D0BB1956-1FFA-4C1F-864B-F70F4B867CB3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dapr", "Dapr", "{D674D0C7-0856-4790-94F8-FA56491C5051}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dapr", "Dapr", "{9E49DB9B-5024-4B80-B298-55F341EBD4D7}"
+	ProjectSection(SolutionItems) = preProject
+		Dapr\Dapr\Dockerfile = Dapr\Dapr\Dockerfile
+		Dapr\Dapr\nscacert.pem = Dapr\Dapr\nscacert.pem
+		Dapr\Dapr\nstenantcert.pem = Dapr\Dapr\nstenantcert.pem
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Daprd", "Daprd", "{93512270-282B-46CC-882A-332AA970D8BD}"
+	ProjectSection(SolutionItems) = preProject
+		Dapr\Daprd\Dockerfile = Dapr\Daprd\Dockerfile
+		Dapr\Daprd\nscacert.pem = Dapr\Daprd\nscacert.pem
+		Dapr\Daprd\nstenantcert.pem = Dapr\Daprd\nstenantcert.pem
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "configuration", "configuration", "{A4BAF442-8AC3-41D1-AED1-F90BA6A8B40E}"
+	ProjectSection(SolutionItems) = preProject
+		Dapr\configuration\configuration.yaml = Dapr\configuration\configuration.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{03ACCA3C-5D7F-4371-91F0-BA4BCC25639D}"
+	ProjectSection(SolutionItems) = preProject
+		Dapr\components\auditingpubsub.yaml = Dapr\components\auditingpubsub.yaml
+		Dapr\components\companyfolderstatestore.yaml = Dapr\components\companyfolderstatestore.yaml
+		Dapr\components\companystatestore.yaml = Dapr\components\companystatestore.yaml
+		Dapr\components\daprshowcasesecretstore.yaml = Dapr\components\daprshowcasesecretstore.yaml
+		Dapr\components\documentsbinding.yaml = Dapr\components\documentsbinding.yaml
+		Dapr\components\secrets.json = Dapr\components\secrets.json
+		Dapr\components\sequencestatestore.yaml = Dapr\components\sequencestatestore.yaml
+		Dapr\components\workflowpubsub.yaml = Dapr\components\workflowpubsub.yaml
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DaprShowcase.Services.DocumentsApi", "Services\DaprShowcase.Services.DocumentsApi\DaprShowcase.Services.DocumentsApi.csproj", "{E7D8703C-B214-4A22-91E4-0D4AC4CD7E71}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DaprShowcase.Services.EntitiesApi", "Services\DaprShowcase.Services.EntitiesApi\DaprShowcase.Services.EntitiesApi.csproj", "{370E9693-DB4F-40ED-8C14-18D0F6DB610B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DaprShowcase.Services.AuditingWorker", "Services\DaprShowcase.Services.AuditingWorker\DaprShowcase.Services.AuditingWorker.csproj", "{AE348ED3-9504-40E0-9B7E-49F256332229}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{E98E86ED-3A89-4A64-BE6E-1BC23049A419}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DaprShowcase.Common", "Common\DaprShowcase.Common\DaprShowcase.Common.csproj", "{3739A951-52A7-4E69-A63A-D2B01CBAEE44}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DaprShowcase.Services.AvScanWorker", "Services\DaprShowcase.Services.AvScanWorker\DaprShowcase.Services.AvScanWorker.csproj", "{CC69052B-7634-4EFC-8928-9340ED472FEF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClamAv", "ClamAv", "{2413D87D-8F11-4131-91D2-2B75DCE24EE8}"
+	ProjectSection(SolutionItems) = preProject
+		Dapr\ClamAv\Dockerfile = Dapr\ClamAv\Dockerfile
+		Dapr\ClamAv\nscacert.pem = Dapr\ClamAv\nscacert.pem
+		Dapr\ClamAv\nstenantcert.pem = Dapr\ClamAv\nstenantcert.pem
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DaprShowcase.Services.Orchestrator", "Services\DaprShowcase.Services.Orchestrator\DaprShowcase.Services.Orchestrator.csproj", "{9C65334E-2FA8-49BB-A9E6-9A9D0A957865}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaprShowcase.Services.ZipWorker", "Services\DaprShowcase.Services.ZipWorker\DaprShowcase.Services.ZipWorker.csproj", "{E1A3BD9B-C985-4B85-8E6C-7510F00855DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Certs", "Certs", "{8844906A-A272-493B-BDBF-95FAEAE60633}"
+	ProjectSection(SolutionItems) = preProject
+		Certs\nscacert.pem = Certs\nscacert.pem
+		Certs\nstenantcert.pem = Certs\nstenantcert.pem
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components-alt", "components-alt", "{B406A20B-CD2E-4974-AB2F-329CFD90DB8E}"
+	ProjectSection(SolutionItems) = preProject
+		Dapr\components-alt\companystatestore-alt.yaml = Dapr\components-alt\companystatestore-alt.yaml
+		Dapr\components-alt\companystatestore.yaml = Dapr\components-alt\companystatestore.yaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0BB1956-1FFA-4C1F-864B-F70F4B867CB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0BB1956-1FFA-4C1F-864B-F70F4B867CB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0BB1956-1FFA-4C1F-864B-F70F4B867CB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0BB1956-1FFA-4C1F-864B-F70F4B867CB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7D8703C-B214-4A22-91E4-0D4AC4CD7E71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7D8703C-B214-4A22-91E4-0D4AC4CD7E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7D8703C-B214-4A22-91E4-0D4AC4CD7E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7D8703C-B214-4A22-91E4-0D4AC4CD7E71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{370E9693-DB4F-40ED-8C14-18D0F6DB610B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{370E9693-DB4F-40ED-8C14-18D0F6DB610B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{370E9693-DB4F-40ED-8C14-18D0F6DB610B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{370E9693-DB4F-40ED-8C14-18D0F6DB610B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE348ED3-9504-40E0-9B7E-49F256332229}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE348ED3-9504-40E0-9B7E-49F256332229}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE348ED3-9504-40E0-9B7E-49F256332229}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE348ED3-9504-40E0-9B7E-49F256332229}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3739A951-52A7-4E69-A63A-D2B01CBAEE44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3739A951-52A7-4E69-A63A-D2B01CBAEE44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3739A951-52A7-4E69-A63A-D2B01CBAEE44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3739A951-52A7-4E69-A63A-D2B01CBAEE44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC69052B-7634-4EFC-8928-9340ED472FEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC69052B-7634-4EFC-8928-9340ED472FEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC69052B-7634-4EFC-8928-9340ED472FEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC69052B-7634-4EFC-8928-9340ED472FEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C65334E-2FA8-49BB-A9E6-9A9D0A957865}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C65334E-2FA8-49BB-A9E6-9A9D0A957865}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C65334E-2FA8-49BB-A9E6-9A9D0A957865}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C65334E-2FA8-49BB-A9E6-9A9D0A957865}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1A3BD9B-C985-4B85-8E6C-7510F00855DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1A3BD9B-C985-4B85-8E6C-7510F00855DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1A3BD9B-C985-4B85-8E6C-7510F00855DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1A3BD9B-C985-4B85-8E6C-7510F00855DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9E49DB9B-5024-4B80-B298-55F341EBD4D7} = {D674D0C7-0856-4790-94F8-FA56491C5051}
+		{93512270-282B-46CC-882A-332AA970D8BD} = {D674D0C7-0856-4790-94F8-FA56491C5051}
+		{A4BAF442-8AC3-41D1-AED1-F90BA6A8B40E} = {D674D0C7-0856-4790-94F8-FA56491C5051}
+		{03ACCA3C-5D7F-4371-91F0-BA4BCC25639D} = {D674D0C7-0856-4790-94F8-FA56491C5051}
+		{E7D8703C-B214-4A22-91E4-0D4AC4CD7E71} = {FDDF5675-4A55-432B-91EC-BB2A0E68E400}
+		{370E9693-DB4F-40ED-8C14-18D0F6DB610B} = {FDDF5675-4A55-432B-91EC-BB2A0E68E400}
+		{AE348ED3-9504-40E0-9B7E-49F256332229} = {FDDF5675-4A55-432B-91EC-BB2A0E68E400}
+		{3739A951-52A7-4E69-A63A-D2B01CBAEE44} = {E98E86ED-3A89-4A64-BE6E-1BC23049A419}
+		{CC69052B-7634-4EFC-8928-9340ED472FEF} = {FDDF5675-4A55-432B-91EC-BB2A0E68E400}
+		{2413D87D-8F11-4131-91D2-2B75DCE24EE8} = {D674D0C7-0856-4790-94F8-FA56491C5051}
+		{9C65334E-2FA8-49BB-A9E6-9A9D0A957865} = {FDDF5675-4A55-432B-91EC-BB2A0E68E400}
+		{E1A3BD9B-C985-4B85-8E6C-7510F00855DC} = {FDDF5675-4A55-432B-91EC-BB2A0E68E400}
+		{B406A20B-CD2E-4974-AB2F-329CFD90DB8E} = {D674D0C7-0856-4790-94F8-FA56491C5051}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {18429C38-B62D-47CA-8AAB-768CDC28DF3E}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,206 @@
+version: '3.4'
+
+services:
+  ### Dapr related services
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6380:6379"
+  zipkin:
+    image: openzipkin/zipkin-slim
+    ports:
+      - "5411:9411"
+  placement:
+    image: "daprio/dapr:local"  
+    command: [ 
+        "./placement"
+        , "-port", "50006" 
+        , "-log-level", "debug"
+        ]
+    ports:
+      - "50016:50006"
+  ## Showcase related services
+  daprshowcase-services-entitiesapi:
+    image: ${DOCKER_REGISTRY-}daprshowcaseservicesentitiesapi
+    build:
+      context: .
+      dockerfile: Services/DaprShowcase.Services.EntitiesApi/Dockerfile
+    environment:
+      - DOTNET_ENVIRONMENT=Development
+    ports:
+      - "8081:80"
+      - "50051:50001"
+  daprshowcase-services-entitiesapi-dapr:
+    image: "daprio/daprd:local"
+    network_mode: "service:daprshowcase-services-entitiesapi"
+    command: [ 
+        "./daprd"
+        , "-app-id", "daprshowcase-services-entitiesapi"
+        , "-app-port", "80"
+        , "-components-path", "/components"
+        , "-config", "/configuration/configuration.yaml"
+        , "-placement-host-address", "placement:50006"
+        ]
+    volumes:
+        - "./Dapr/components/:/components"
+        - "./Dapr/configuration/:/configuration" 
+    depends_on:
+      - daprshowcase-services-entitiesapi
+      - placement
+  daprshowcase-services-documentsapi:
+    image: ${DOCKER_REGISTRY-}daprshowcaseservicedocumentsapi
+    build:
+      context: .
+      dockerfile: Services/DaprShowcase.Services.DocumentsApi/Dockerfile
+    environment:
+      - DOTNET_ENVIRONMENT=Development
+    ports:
+      - "8082:80"
+      - "50052:50001"
+  daprshowcase-services-documentsapi-dapr:
+    image: "daprio/daprd:local"
+    network_mode: "service:daprshowcase-services-documentsapi"
+    command: [ 
+        "./daprd"
+        , "-app-id", "daprshowcase-services-documentsapi"
+        , "-app-port", "80"
+        , "-components-path", "/components"
+        , "-config", "/configuration/configuration.yaml"
+        , "-placement-host-address", "placement:50006"
+        , "--log-level", "debug"
+        ]
+    volumes:
+        - "./Dapr/components/:/components"
+        - "./Dapr/configuration/:/configuration" 
+    depends_on:
+      - daprshowcase-services-documentsapi
+      - placement
+  daprshowcase-services-auditingworker:
+    image: ${DOCKER_REGISTRY-}daprshowcaseserviceauditingworker
+    build:
+      context: .
+      dockerfile: Services/DaprShowcase.Services.AuditingWorker/Dockerfile
+    environment:
+      - DOTNET_ENVIRONMENT=Development
+    ports:
+      - "15001:5050"
+      - "50053:50001"
+  daprshowcase-services-auditingworker-dapr:
+    image: "daprio/daprd:local"
+    network_mode: "service:daprshowcase-services-auditingworker"
+    command: [ 
+        "./daprd"
+        , "-app-id", "daprshowcase-services-auditingworker"
+        , "-app-port", "5050"
+        , "-app-protocol", "grpc"
+        , "--app-max-concurrency", "4"
+        , "-components-path", "/components"
+        , "-config", "/configuration/configuration.yaml"
+        , "-placement-host-address", "placement:50006"
+        , "--log-level", "debug"
+        ]
+    volumes:
+        - "./Dapr/components/:/components"
+        - "./Dapr/configuration/:/configuration" 
+    depends_on:
+      - daprshowcase-services-auditingworker
+      - placement
+  daprshowcase-services-avscanworker:
+    image: ${DOCKER_REGISTRY-}daprshowcaseserviceavscanworker
+    build:
+      context: .
+      dockerfile: Services/DaprShowcase.Services.AvScanWorker/Dockerfile
+    environment:
+      - DOTNET_ENVIRONMENT=Development
+    ports:
+      - "15002:5050"
+      - "50054:50001"
+  daprshowcase-services-avscanworker-av:
+    image: mkodockx/docker-clamav:local
+    network_mode: "service:daprshowcase-services-avscanworker"
+    depends_on:
+      - daprshowcase-services-avscanworker
+  daprshowcase-services-avscanworker-dapr:
+    image: "daprio/daprd:local"
+    network_mode: "service:daprshowcase-services-avscanworker"
+    command: [ 
+        "./daprd"
+        , "-app-id", "daprshowcase-services-avscanworker"
+        , "-app-port", "5050"
+        , "-app-protocol", "grpc"
+        , "--app-max-concurrency", "4"
+        , "-components-path", "/components"
+        , "-config", "/configuration/configuration.yaml"
+        , "-placement-host-address", "placement:50006"
+        , "--log-level", "debug"
+        ]
+    volumes:
+        - "./Dapr/components/:/components"
+        - "./Dapr/configuration/:/configuration" 
+    depends_on:
+      - daprshowcase-services-avscanworker
+      - placement
+  daprshowcase-services-zipworker:
+    image: ${DOCKER_REGISTRY-}daprshowcaseservicezipworker
+    build:
+      context: .
+      dockerfile: Services/DaprShowcase.Services.ZipWorker/Dockerfile
+    environment:
+      - DOTNET_ENVIRONMENT=Development
+    ports:
+      - "15003:5050"
+      - "50055:50001"
+  daprshowcase-services-zipworker-dapr:
+    image: "daprio/daprd:local"
+    network_mode: "service:daprshowcase-services-zipworker"
+    command: [ 
+        "./daprd"
+        , "-app-id", "daprshowcase-services-zipworker"
+        , "-app-port", "5050"
+        , "-app-protocol", "grpc"
+        , "--app-max-concurrency", "4"
+        , "-components-path", "/components"
+        , "-config", "/configuration/configuration.yaml"
+        , "-placement-host-address", "placement:50006"
+        , "--log-level", "debug"
+        ]
+    volumes:
+        - "./Dapr/components/:/components"
+        - "./Dapr/configuration/:/configuration" 
+    depends_on:
+      - daprshowcase-services-zipworker
+      - placement
+  daprshowcase-services-orchestrator:
+    image: ${DOCKER_REGISTRY-}daprshowcaseserviceochestrator
+    build:
+      context: .
+      dockerfile: Services/DaprShowcase.Services.Orchestrator/Docker/Dockerfile
+    depends_on:
+      - redis
+    environment:
+      - DOTNET_ENVIRONMENT=Development
+      - FUNCTIONS_WORKER_RUNTIME=dotnet
+      - WEBSITE_HOSTNAME=localhost:80
+      - AzureWebJobsStorage=DefaultEndpointsProtocol=https;AccountName=deltldafgpdcommonstracc;AccountKey=JS6lLBpOhf/1UVwtkdF1PrBI02/sp7wPgf9h4scgXfIDztqfc9bAKmOz3paVMxSLyfl4pRYBgKoBHB63iUesnQ==;EndpointSuffix=core.windows.net
+      - AzureWebJobsDashboard=DefaultEndpointsProtocol=https;AccountName=deltldafgpdcommonstracc;AccountKey=JS6lLBpOhf/1UVwtkdF1PrBI02/sp7wPgf9h4scgXfIDztqfc9bAKmOz3paVMxSLyfl4pRYBgKoBHB63iUesnQ==;EndpointSuffix=core.windows.net
+    ports:
+      - "15004:80"
+  daprshowcase-services-orchestrator-dapr:
+    image: "daprio/daprd:local"   
+    network_mode: "service:daprshowcase-services-orchestrator"    
+    command: [ 
+        "./daprd"
+        , "-app-id", "daprshowcase-services-orchestrator"
+        , "-app-port", "3001"
+        , "-components-path", "/components"
+        , "-config", "/configuration/configuration.yaml"
+        , "-placement-host-address", "placement:50006"
+        , "--log-level", "debug"
+        ]
+    volumes:
+        - "./Dapr/components/:/components"
+        - "./Dapr/configuration/:/configuration"  
+    depends_on:
+        - daprshowcase-services-orchestrator
+        - redis
+        - placement
